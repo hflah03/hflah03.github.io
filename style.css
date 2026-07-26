@@ -1,0 +1,22 @@
+body {
+    background-color: #222222;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.topbar {
+    display: inline-block;
+    font-size: 24px;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    margin: 20px;
+}

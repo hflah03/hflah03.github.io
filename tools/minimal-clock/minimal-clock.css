@@ -24,47 +24,55 @@ p {
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
-    margin-bottom: 0;
+    margin-bottom: 3vh;
     
 }
 
 .top-bar .button {
     color: #F1FFE7;
+    height: 2.2vh;
+    line-height: 2.2vh;
+    text-align: center;
     font-weight: 800;
     font-size: 20px;
     background-color: #5B5B5B;
     border-radius: 8px;
-    padding: 12px 24px;
+    padding: 1.1vh 2.8vw;
 }
 
-.title {
+.top-bar .title {
     color: #5B5B5B;
-    font-size: 44px;
+    font-size: 36px;
+    margin-top: 2.4vh;
     text-align: center;
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    /*height: 100vh;*/
+    margin: 0;
 }
 
-.main-container h1 {
-    padding: 30px;
+.main-container p {
+    margin: 40px 60px 20px 60px;
+    color: #5B5B5B;
+    font-size: 26px;
+    text-align: center;
 }
 
 /* CLOCK DESIGN*/
 .clock {
-    width: min(72vw, 72vh);
+    width: 72vmin;
+    height: 72vmin;
     aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
     background-color: #1c1b1b;
     border-radius: 50%;
-    /*border: 20px solid #1c1b1b;       !* Inner border *!*/
-    outline: 20px solid #F1FFE7;   /* Outer border */
+    /*border: 20px solid #1c1b1b;*/     
+    outline: 1vh solid #F1FFE7;
     outline-offset: -1px;
 }
 

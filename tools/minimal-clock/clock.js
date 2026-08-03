@@ -12,15 +12,19 @@ function updateClock() {
     const hours = currentTime.getHours();
     const minutes = currentTime.getMinutes();
     const seconds = currentTime.getSeconds();
+    const milliseconds = currentTime.getMilliseconds();
+    
+    const smoothSeconds = seconds + (milliseconds / 1000);
 
     const hoursAngle = (30 * hours) + (0.5 * minutes)
-    const minutesAngle = (6 * minutes)
-    const secondAngle = (6 * seconds)
+    const minutesAngle = (6 * minutes) + (0.1 * smoothSeconds);
+    const secondAngle = (6 * smoothSeconds)
 
     hourHand.style.transform = `translateX(-50%) rotate(${hoursAngle}deg)`;
     minuteHand.style.transform = `translateX(-50%) rotate(${minutesAngle}deg)`;
     secondHand.style.transform = `translateX(-50%) rotate(${secondAngle}deg)`;
+    
+    requestAnimationFrame(updateClock);
 }
 
-setInterval(updateClock, 1000);
-updateClock();
+requestAnimationFrame(updateClock);

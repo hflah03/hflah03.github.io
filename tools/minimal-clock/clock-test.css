@@ -1,0 +1,46 @@
+.center-circle {
+    content: '';
+    width: 8.0%;
+    aspect-ratio: 1 / 1;
+    background-color: #F1FFE7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%) rotate(0deg);
+    border-radius: 5px;
+}
+/* NOTE: 38% makes hand reach outer edge */
+
+/* Hour Hand */
+.hour-hand {
+    width: 6.4%;
+    height: 28%;
+    background-color: #F1FFE7;
+    /*transform: translate(-50%) rotate(40deg);*/
+}
+
+/* Minute Hand */
+.minute-hand {
+    width: 3.2%;
+    height: 42%;
+    background-color: #F1FFE7;
+    /*transform: translate(-50%) rotate(150deg);*/
+}
+
+/* Second Hand */
+.second-hand {
+    width: 1.0%;
+    height: 48.0%;
+    background-color: #F1FFE7;
+    /*transform: translate(-50%) rotate(290deg);*/
+}

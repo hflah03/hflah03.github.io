@@ -1,3 +1,7 @@
+/** {*/
+/*    border: 1px solid red;*/
+/*}*/
+
 body {
     background-color: #F1FFE7;
     color: #5B5B5B;
@@ -47,4 +51,67 @@ p {
     background-color: #32A287;
     border-radius: 8px;
     padding: 16px 28px;
+}
+
+
+
+.tools-container {
+    padding: 40px;
+}
+
+.tool-item {
+    /* When adding multiple, can use
+    a CSS grid to auto scale width 
+    in a reasonable range (like 240
+    to 360px) and the SVG should
+    stay a reasonable size in
+    proportion to the container. */
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 100px 30px 50px 30px;
+    border-radius: 40px;
+    background-color: #F1FFE7;
+    /*background-image: radial-gradient(circle, #F1FFE7, #D8FCD9);*/
+    box-shadow: 0 0 10px 10px rgb(74 103 76 / 0.11);
+}
+
+.tool-item svg:hover {
+    /*background-color: #d2dbcc;*/
+    transform: scale(1.15)
+}
+
+.tool-item svg {
+    display: flex;
+    margin: 0;
+    height: auto; /* Adjust the value as needed */
+    width: 100%;
+}
+
+.tool-item svg .icon-background{
+    fill: #5B5B5B;
+    filter: drop-shadow(0px 3px 1px rgb(0 0 0 / 0.3));
+}
+
+.tool-item svg .icon-details{
+    fill: #F1FFE7;
+}
+
+.tool-item h1, p {
+    margin: 0;
+    text-align: center;
+    color: #5B5B5B;
+}
+
+.tool-item h1 {
+    font-size: 36px;
+    margin: 30px 0 20px 0;
+}
+
+.tool-item p {
+    font-size: 22px;
+    width: 75%;
+    font-style: italic;
 }

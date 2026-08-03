@@ -24,6 +24,8 @@ p {
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
+    margin-bottom: 0;
+    
 }
 
 .top-bar .button {
@@ -51,18 +53,31 @@ p {
 
 /* CLOCK DESIGN*/
 .clock {
-    height: 80vh;
+    width: min(72%, 72vh);
     aspect-ratio: 1 / 1;
+    position: relative;
+    /*overflow: hidden;*/
     background-color: #1c1b1b;
     border-radius: 50%;
-    border: 2.2vh solid #5B5B5B;
+    z-index: 1;
+    /*border: 2.2vh solid #F1FFE7;*/
+    /*border: 2.2vh solid #5B5B5B;*/
     /*box-shadow: 0 0 5vh 5vh rgb(74 103 76 / 0.11);*/
 }
 
+/*.clock::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    border-radius: 50%;*/
+/*    box-shadow: inset 0 0 0 1px #F1FFE7;*/
+/*    z-index: 3;*/
+/*}*/
+
 /* Center Pin (whatever that does) */
-.clock::after {
+.center-circle {
     content: '';
-    width: 4.8%;
+    width: 8.0%;
     aspect-ratio: 1 / 1;
     background-color: #F1FFE7;
     position: absolute;
@@ -71,6 +86,29 @@ p {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 5px #F1FFE7;
+    /**!, 0 0 0 10px #F1FFE7;!**/
+    pointer-events: none; 
+    z-index: 2;
+}
+
+.tick-mark {
+    position: absolute;
+    width: 2%;
+    height: 8%;
+    /*background-color: #5B5B5B;*/
+    background-color: #F1FFE7;
+    left: calc(50% - 1%);
+    top: 0%;
+    transform-origin: 50% 625%;
+    transform: rotate(calc(var(--i) * 90deg));
 }
 
 .hand {
@@ -85,25 +123,24 @@ p {
 
 /* Hour Hand */
 .hour-hand {
-    width:3.2%;
-    height: 26%;
+    width: 6.4%;
+    height: 28%;
     background-color: #F1FFE7;
     /*transform: translate(-50%) rotate(40deg);*/
 }
 
 /* Minute Hand */
 .minute-hand {
-    width: 1.8%;
-    height: 34%;
+    width: 3.2%;
+    height: 42%;
     background-color: #F1FFE7;
     /*transform: translate(-50%) rotate(150deg);*/
-
 }
 
 /* Second Hand */
 .second-hand {
-    width: 0.4%;
-    height: 36.8%;
+    width: 1.0%;
+    height: 48.0%;
     background-color: #F1FFE7;
     /*transform: translate(-50%) rotate(290deg);*/
 }
